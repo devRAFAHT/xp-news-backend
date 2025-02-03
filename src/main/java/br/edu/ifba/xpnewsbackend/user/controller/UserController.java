@@ -42,6 +42,11 @@ public class UserController {
         return ResponseEntity.ok(PageableMapper.toDto(users));
     }
 
+    @GetMapping(value = "/find-all-with-client", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<PageableDto> findAllWithClient(){
+        return ResponseEntity.ok(service.findAllWithClient());
+    }
+
     /**
      * Busca um usuário pelo ID.
      */

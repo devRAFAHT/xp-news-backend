@@ -4,6 +4,9 @@ import br.edu.ifba.xpnewsbackend.exception.DatabaseException;
 import br.edu.ifba.xpnewsbackend.exception.PasswordInvalidException;
 import br.edu.ifba.xpnewsbackend.exception.ResourceNotFoundException;
 import br.edu.ifba.xpnewsbackend.exception.UniqueViolationException;
+import br.edu.ifba.xpnewsbackend.infrastructure.clients.UserClient;
+import br.edu.ifba.xpnewsbackend.infrastructure.dto.PageableDto;
+import br.edu.ifba.xpnewsbackend.user.dto.UserResponseDto;
 import br.edu.ifba.xpnewsbackend.user.entity.User;
 import br.edu.ifba.xpnewsbackend.user.repository.UserProjection;
 import br.edu.ifba.xpnewsbackend.user.repository.UserRepository;
@@ -21,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService implements UserIService{
 
     private final UserRepository repository;
+    private final UserClient userClient;
 
     /**
      * Cria um novo usuário no banco de dados.
@@ -145,5 +149,11 @@ public class UserService implements UserIService{
             log.error("Erro ao excluir usuário com ID: {} - Violação de integridade", id);
             throw new DatabaseException("Violação de integridade");
         }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageableDto findAllWithClient(){
+        return userClient.findAll();
     }
 }
