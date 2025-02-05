@@ -6,7 +6,6 @@ import br.edu.ifba.xpnewsbackend.exception.ResourceNotFoundException;
 import br.edu.ifba.xpnewsbackend.exception.UniqueViolationException;
 import br.edu.ifba.xpnewsbackend.infrastructure.clients.UserClient;
 import br.edu.ifba.xpnewsbackend.infrastructure.dto.PageableDto;
-import br.edu.ifba.xpnewsbackend.user.dto.UserResponseDto;
 import br.edu.ifba.xpnewsbackend.user.entity.User;
 import br.edu.ifba.xpnewsbackend.user.repository.UserProjection;
 import br.edu.ifba.xpnewsbackend.user.repository.UserRepository;
@@ -128,6 +127,7 @@ public class UserService implements UserIService{
         }
 
         user.setPassword(newPassword);
+        repository.save(user);
         log.info("Senha atualizada com sucesso para o usuário com ID: {}", id);
     }
 
