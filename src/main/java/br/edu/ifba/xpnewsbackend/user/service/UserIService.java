@@ -15,6 +15,7 @@ public interface UserIService {
     User findByUsername(String username);
     User findByEmail(String email);
     void updatePassword(Long id, String currentPassword, String newPassword, String confirmationPassword);
+    void updateUser(Long id, User newData);
     void delete(Long id);
     PageableDto findAllWithClient();
 

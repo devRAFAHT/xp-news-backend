@@ -2,6 +2,7 @@ package br.edu.ifba.xpnewsbackend.user.mapper;
 
 import br.edu.ifba.xpnewsbackend.user.dto.UserCreateDto;
 import br.edu.ifba.xpnewsbackend.user.dto.UserResponseDto;
+import br.edu.ifba.xpnewsbackend.user.dto.UserUpdateDto;
 import br.edu.ifba.xpnewsbackend.user.entity.User;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
@@ -18,6 +19,15 @@ public class UserMapper {
      */
     public static User toUser(UserCreateDto createDto) {
         return new ModelMapper().map(createDto, User.class);
+    }
+
+    /**
+     * Converte um DTO de atualização de usuário para uma entidade User.
+     * @param updateDto Objeto DTO contendo os dados de atualização do usuário.
+     * @return Entidade User atualizada com os dados do DTO.
+     */
+    public static User updateToUser(UserUpdateDto updateDto) {
+        return new ModelMapper().map(updateDto, User.class);
     }
 
     /**

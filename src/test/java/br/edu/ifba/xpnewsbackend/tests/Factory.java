@@ -33,7 +33,7 @@ public class Factory {
     }
 
     public static UserResponseDto createUserResponseDto(){
-        UserResponseDto dto = new UserResponseDto(1L, "Rafael Andrade", "rafa12", "CLIENT");
+        UserResponseDto dto = new UserResponseDto(1L, "Rafael Andrade", "rafa@gmail.com", "rafa12", "CLIENT");
         return dto;
     }
 

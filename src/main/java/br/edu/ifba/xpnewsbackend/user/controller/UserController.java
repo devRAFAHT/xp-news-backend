@@ -4,6 +4,7 @@ import br.edu.ifba.xpnewsbackend.infrastructure.dto.PageableDto;
 import br.edu.ifba.xpnewsbackend.infrastructure.mapper.PageableMapper;
 import br.edu.ifba.xpnewsbackend.user.dto.UserCreateDto;
 import br.edu.ifba.xpnewsbackend.user.dto.UserResponseDto;
+import br.edu.ifba.xpnewsbackend.user.dto.UserUpdateDto;
 import br.edu.ifba.xpnewsbackend.user.dto.UserUpdatePasswordDto;
 import br.edu.ifba.xpnewsbackend.user.entity.User;
 import br.edu.ifba.xpnewsbackend.user.mapper.UserMapper;
@@ -77,9 +78,20 @@ public class UserController {
     /**
      * Atualiza a senha de um usuário.
      */
-    @PutMapping(value = "update", params = "id", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "update-password", params = "id", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> updatePassword(@RequestParam ("id") Long id, @Valid @RequestBody UserUpdatePasswordDto dto){
         service.updatePassword(id, dto.getCurrentPassword(), dto.getNewPassword(), dto.getConfirmationPassword());
+        return ResponseEntity.ok().build();
+    }
+
+    /**
+     * Atualiza um usuário no sistema.
+     */
+    @PutMapping(value = "update", params = "id", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserResponseDto> updateUser(@RequestParam("id") Long id, @Valid @RequestBody UserUpdateDto dto) {
+
+        service.updateUser(id, UserMapper.updateToUser(dto));
+
         return ResponseEntity.ok().build();
     }
 

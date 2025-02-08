@@ -131,6 +131,23 @@ public class UserService implements UserIService{
         log.info("Senha atualizada com sucesso para o usuário com ID: {}", id);
     }
 
+    @Override
+    @Transactional
+    public void updateUser(Long id, User newData) {
+        log.info("Iniciando atualização do usuário com ID: {}", id);
+        User user = findById(id);
+
+        user.setUsername(newData.getUsername());
+        user.setEmail(newData.getEmail());
+        user.setRole(newData.getRole());
+        user.setFullName(newData.getFullName());
+        log.info("Usuário com id {} encontrado.", id);
+
+        repository.save(user);
+        log.info("Usuário com ID {} atualizado com sucesso", id);
+    }
+
+
     /**
      * Exclui um usuário do banco de dados após encontrá-lo pelo ID.
      * Caso haja uma violação de integridade, lança uma exceção apropriada.
