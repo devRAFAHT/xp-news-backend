@@ -10,7 +10,9 @@ public class UserProjectionImpl implements UserProjection {
     @EqualsAndHashCode.Include
     private final Long id;
     private final String fullName;
+    private final String email;
     private final String username;
+    private final String role;
 
     @Override
     public Long getId() {
@@ -23,8 +25,18 @@ public class UserProjectionImpl implements UserProjection {
     }
 
     @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
     public String getUsername() {
         return username;
+    }
+
+    @Override
+    public String getRole() {
+        return role;
     }
 
 }

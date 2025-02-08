@@ -26,8 +26,8 @@ public class Factory {
     }
 
     public static Page<UserProjection> createUserProjectionPage(Pageable pageable) {
-        UserProjection user1 = new UserProjectionImpl(1L, "Rafael Andrade", "rafa12");
-        UserProjection user2 = new UserProjectionImpl(2L, "Maria Silva", "mariaS");
+        UserProjection user1 = new UserProjectionImpl(1L, "Rafael Andrade", "rafa@gmail.com", "rafa12", "CLIENT");
+        UserProjection user2 = new UserProjectionImpl(2L, "Maria Silva", "maria@gmail.com","mariaS", "CLIENT");
         List<UserProjection> users = Arrays.asList(user1, user2);
         return new PageImpl<>(users, pageable, users.size());
     }

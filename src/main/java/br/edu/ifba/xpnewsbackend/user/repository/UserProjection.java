@@ -4,6 +4,7 @@ public interface UserProjection {
 
     Long getId();
     String getFullName();
+    String getEmail();
     String getUsername();
-
+    String getRole();
 }
