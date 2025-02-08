@@ -1,4 +1,4 @@
-package br.edu.ifba.xpnewsbackend.exception;
+package br.edu.ifba.xpnewsbackend.infrastructure.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.servlet.http.HttpServletRequest;

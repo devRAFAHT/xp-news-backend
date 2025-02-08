@@ -1,4 +1,4 @@
-package br.edu.ifba.xpnewsbackend.exception;
+package br.edu.ifba.xpnewsbackend.infrastructure.exception;
 
 public class UniqueViolationException extends RuntimeException{
     public UniqueViolationException(String message) {

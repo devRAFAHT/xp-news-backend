@@ -1,4 +1,4 @@
-package br.edu.ifba.xpnewsbackend.exception;
+package br.edu.ifba.xpnewsbackend.infrastructure.exception;
 
 public class DatabaseException extends RuntimeException{
     public DatabaseException(String message) {

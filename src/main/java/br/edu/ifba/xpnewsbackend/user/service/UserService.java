@@ -1,9 +1,9 @@
 package br.edu.ifba.xpnewsbackend.user.service;
 
-import br.edu.ifba.xpnewsbackend.exception.DatabaseException;
-import br.edu.ifba.xpnewsbackend.exception.PasswordInvalidException;
-import br.edu.ifba.xpnewsbackend.exception.ResourceNotFoundException;
-import br.edu.ifba.xpnewsbackend.exception.UniqueViolationException;
+import br.edu.ifba.xpnewsbackend.infrastructure.exception.DatabaseException;
+import br.edu.ifba.xpnewsbackend.infrastructure.exception.PasswordInvalidException;
+import br.edu.ifba.xpnewsbackend.infrastructure.exception.ResourceNotFoundException;
+import br.edu.ifba.xpnewsbackend.infrastructure.exception.UniqueViolationException;
 import br.edu.ifba.xpnewsbackend.infrastructure.clients.UserClient;
 import br.edu.ifba.xpnewsbackend.infrastructure.dto.PageableDto;
 import br.edu.ifba.xpnewsbackend.user.entity.User;
