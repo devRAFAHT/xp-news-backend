@@ -1,4 +1,4 @@
-Apackage br.edu.ifba.xpnewsbackend.infrastructure.exception;
+package br.edu.ifba.xpnewsbackend.infrastructure.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
